@@ -30,8 +30,8 @@ a viewing direction) to volume density and emitted radiance. By integrating thes
   </tr>
 </table>
 
-- Device used: [TITAN X (Pascal) 250W / 12GiB RAM](outputs/gpu.txt)
-
+- Device used: [TITAN X (Pascal) 250W / 12GiB RAM]
+  
 - Time to train: 12h 30m
  
    |      Testing Metrics    | Values   |
@@ -72,10 +72,55 @@ After completing the [Setup](#Setup)
     DEVICES: int = torch.cuda.device_count()
     MAX_EPOCHS: int = 17
     ```
+    
 2. #### Run the [train.py](train.py) script
     ```sh
     python train.py
     ```
 
+### Evaluation
+After the [Setup](#Setup)  part is complete
+
+1. #### Change configurations 
+    In the [config.py](config.py) file
+
+    ```py
+    """------------------------NeRF Config------------------------"""
+    ...
+    #eval
+    CKPT_DIR: str = "models/16_epoch_192_bins_400_nerf.ckpt" 
+    CHUNK_SIZE: int = 20  # increase chunksize prevent CUDA out of memory errors
+    OUTPUTS_DIR: str = "outputs" #folder you want to save the novel views in
+    ```
+2. #### Run the [eval.py](eval.py) script
+    ```sh
+    python eval.py
+    ```
+
+### References and Citations
+
+- https://github.com/MaximeVandegar/Papers-in-100-Lines-of-Code/tree/main/NeRF_Representing_Scenes_as_Neural_Radiance_Fields_for_View_Synthesis
+  
+```
+@misc{mildenhall2020nerf,
+    title={NeRF: Representing Scenes as Neural Radiance Fields for View Synthesis},
+    author={Ben Mildenhall and Pratul P. Srinivasan and Matthew Tancik and Jonathan T. Barron and Ravi Ramamoorthi and Ren Ng},
+    year={2020},
+    eprint={2003.08934},
+    archivePrefix={arXiv},
+    primaryClass={cs.CV}
+}
+```
+
+```
+@misc{lin2020nerfpytorch,
+  title={NeRF-pytorch},
+  author={Yen-Chen, Lin},
+  publisher = {GitHub},
+  journal = {GitHub repository},
+  howpublished={\url{https://github.com/yenchenlin/nerf-pytorch/}},
+  year={2020}
+}
+```
     
 
