@@ -3,21 +3,20 @@
 a viewing direction) to volume density and emitted radiance. By integrating these outputs along camera rays using differentiable volume rendering, NeRF can generate photorealistic novel views of the scene.
 ## Index
 
-1. [My Renders](#Renders)
+1. [My Render](#Render)
 2. [Setup](#Setup)
 3. [Training](#Training)
 4. [Evaluation](#Evaluation)
-5. [References and Citations](#References-and-Citations)
+5. [References](#References)
 
-### My Renders
+### My Render
 
 <!--<div align="center">
   <img src="images/lego_16_epoch_400.gif" alt="Image">
 </div>-->
 <table>
   <tr>
-    <td align="center"><img width="400" alt="nerf_output" src="images/lego_16_epoch_400.gif"><br>Novel Views</td>
-    <td align="center"><img width="400" alt="sphere" src="images/speed_mesh.gif"><br>3D Reconstruction</td>
+    <td align="center"><img width="425" alt="nerf_output" src="images/lego_16_epoch_400.gif"><br>Novel Views</td>
   </tr>
 </table>
 
@@ -25,8 +24,8 @@ a viewing direction) to volume density and emitted radiance. By integrating thes
 
 <table>
   <tr>
-    <td align="center"><img width="800" alt="loss" src="images/loss_wandb_graph.png"><br>MSE</td>
-    <td align="center"><img width="800" alt="psnr" src="images/psnr_wandb_graph.png"><br>PSNR</td>
+    <td align="center"><img width="825" alt="loss" src="images/loss_wandb_graph.png"><br>MSE</td>
+    <td align="center"><img width="825" alt="psnr" src="images/psnr_wandb_graph.png"><br>PSNR</td>
   </tr>
 </table>
 
@@ -97,7 +96,7 @@ After the [Setup](#Setup)  part is complete
     python eval.py
     ```
 
-### References and Citations
+### References
 
 - https://github.com/MaximeVandegar/Papers-in-100-Lines-of-Code/tree/main/NeRF_Representing_Scenes_as_Neural_Radiance_Fields_for_View_Synthesis
   
